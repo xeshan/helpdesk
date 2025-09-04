@@ -1,7 +1,7 @@
 <template>
     <div :class="['app', theme]">
         <header class="app__header">
-            <h1 class="app__title"><router-link to="/" class="app__title-link">Smart Ticket Triage</router-link></h1>
+            <h1 class="app__title"><router-link to="/" class="app__title-link">Help Desk</router-link></h1>
             <nav class="app__nav">
                 <router-link to="/dashboard" class="app__nav-link">Dashboard</router-link>
                 <router-link to="/tickets" class="app__nav-link">Tickets</router-link>

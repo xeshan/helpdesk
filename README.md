@@ -1,8 +1,8 @@
 
 
-# Smart Ticket Triage
+# HelpDesk
 
-## A Laravel-based Smart Ticket Triage application with AI-powered features.
+## A Laravel-based helpdesk application with AI-powered features.
 
 ### Installation
 
@@ -29,9 +29,10 @@ cp .env.example .env
 
 OpenAI settings:
 
-1. OPENAI_CLASSIFY_ENABLED: Set to true to enable AI features or false to disable them.
-2. OPENAI_API_KEY: Enter your real OpenAI API key if OPENAI_CLASSIFY_ENABLED is set to true.
-3. Queue connection: Set QUEUE_CONNECTION to database for realistic behavior or sync for local development.
+1. OPENAI_CLASSIFY_ENABLED = "Set to true to enable AI features or false to disable them"
+2. OPENAI_API_KEY = "Enter your real OpenAI API key if OPENAI_CLASSIFY_ENABLED is set to true"
+3. OPENAI_ORGANIZATION= "Enter OpenAI organization id if OPENAI_CLASSIFY_ENABLED is set to true "
+3. Queue connection=sync
 
 Step 4: Generate Application Key and Migrate Database
 
