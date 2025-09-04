@@ -1,8 +1,8 @@
 
 
-# Helpdesk Project
+# Smart Ticket Triage
 
-## A Laravel-based helpdesk application with AI-powered features.
+## A Laravel-based Smart Ticket Triage application with AI-powered features.
 
 ### Installation
 
