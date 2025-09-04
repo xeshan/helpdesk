@@ -132,20 +132,21 @@ export default {
             try {
                 t._loading = true
                 await api.classifyTicket(t.id)
-                // Poll for a short time to fetch updated classification
+                
                 const start = Date.now()
                 const poll = async () => {
-                const { data } = await api.getTicket(t.id)
-                const idx = this.items.findIndex(x => x.id === t.id)
-                if (idx !== -1) this.items[idx] = { ...this.items[idx], ...data, _loading: true }
-                const done = !!data.explanation && data.confidence !== null
-                if (done || Date.now() - start > 8000) {
-                    t._loading = false
-                } else {
-                    setTimeout(poll, 800)
+                    const { data } = await api.getTicket(t.id)
+                    const idx = this.items.findIndex(x => x.id === t.id)
+                    if (idx !== -1) this.items[idx] = { ...this.items[idx], ...data }
+                    const done = !!data.explanation && data.confidence !== null
+                    if (done || Date.now() - start > 8000) {
+                        this.items[idx]._loading = false 
+                        this.items = [...this.items] 
+                    } else {
+                        setTimeout(poll, 800)
+                    }
                 }
-            }
-            poll()
+                poll()
             } catch (e) {
                 t._loading = false
                 console.error('Classification error:', e.response ? e.response.data : e)
