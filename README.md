@@ -60,3 +60,6 @@ php artisan db:seed TicketSeeder
 ```bash
 php artisan tickets:bulk-classify
 ```
+
+# output sample
+![](https://github.com/xeshan/helpdesk/blob/main/output.gif)
